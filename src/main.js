@@ -7,6 +7,11 @@ const tips = document.querySelector('.tips');
 const all = document.querySelector('.all');
 const active = document.querySelector('.active');
 const performed = document.querySelector('.performed');
+const confirmOverlay = document.getElementById("confirm-overlay");
+const confirmYes = document.getElementById("confirm-yes");
+const confirmNo = document.getElementById("confirm-no");
+const tipsBtn = document.querySelector('.tips');
+const overlay = document.getElementById('tips-overlay');
 
 pencil.addEventListener('click', () => {
     input.classList.toggle('display');
@@ -18,8 +23,6 @@ input.addEventListener('keypress',(e) => {
         input.value = '';
     }
 });
-
-
 
 const addToDo = (text) => {
     if(text.length === 0) return;
@@ -70,9 +73,6 @@ performed.addEventListener('click', () => {
     }
 });
 
-const tipsBtn = document.querySelector('.tips');
-const overlay = document.getElementById('tips-overlay');
-
 tipsBtn.addEventListener('click', () => {
     overlay.classList.add('active');
 });
@@ -81,3 +81,21 @@ overlay.addEventListener('click', () => {
     overlay.classList.remove('active');
 });
 
+clear.addEventListener("click", () => {
+    confirmOverlay.classList.add("active");
+});
+
+confirmYes.addEventListener("click", () => {
+    ul.innerHTML = ""; 
+    confirmOverlay.classList.remove("active");
+});
+
+confirmNo.addEventListener("click", () => {
+    confirmOverlay.classList.remove("active");
+});
+
+confirmOverlay.addEventListener("click", (e) => {
+    if (e.target === confirmOverlay) {
+        confirmOverlay.classList.remove("active");
+    }
+});

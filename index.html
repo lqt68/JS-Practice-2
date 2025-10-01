@@ -25,7 +25,7 @@
         </ul>
 
         <div id="buttons">
-            <button class="save">Save</button>
+            <button onclick="window.location.href='https://youtu.be/dQw4w9WgXcQ?si=Dx_TDQDbv_Lalu-U'" class="save">Save</button>
             <button class="clear">Clear</button>
             <button class="tips">Tips</button>
         </div>
@@ -37,6 +37,16 @@
                 <p>🗑️ Клік по іконці смітника видаляє завдання.</p>
                 <p>📌 Використовуй фільтри: All, Active, Performed.</p>
                 <button id="close-tips">Close</button>
+            </div>
+        </div>
+
+        <div id="confirm-overlay" class="hidden">
+            <div class="confirm-box">
+                <p>Ви впевнені, що хочете видалити усі таски?</p>
+                <div class="confirm-buttons">
+                    <button id="confirm-yes">Так</button>
+                    <button id="confirm-no">Ні</button>
+                </div>
             </div>
         </div>
 
